@@ -58,3 +58,18 @@
 
 - ## Kubernetes architecture for project example
 ![Kubernetes architecture for project example](/assets/kubernetes_architecture.png "Kubernetes architecture for project example")
+
+- ## Volumes in kubernetes
+![Volumes in kubernetes](/assets/volume_in_kubernetes.png "Volumes in kubernetes")
+
+- ## Persistent Volume access modes
+![Persistent Volume access modes](/assets/kubernetes_access_mode_persistent.png "Persistent Volume access modes")
+
+- ## Get storages available
+        $> kubectl get storageclass
+
+- ## Get more detailed information about storages available
+        $> kubectl describe storageclass
+
+- ##  Storage documentation
+    https://kubernetes.io/docs/concepts/storage/storage-classes
