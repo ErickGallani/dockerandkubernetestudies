@@ -35,3 +35,26 @@
 
 - ## Declarative vs Imperative deployment strategy
 ![Declarative vs Imperative deployment strategy](/assets/declarative_imperative.png "Declarative vs Imperative deployment strategye")
+
+- ## Kubernetes describe command - used do inspec objects
+![Kubernetes describe command](/assets/kubernetes_describe_command.png "Kubernetes describe command")
+
+- ## Kubernetes some object types example
+![Kubernetes some object types example](/assets/kubernetes_object_types.png "Kubernetes some object types example")
+
+- ## Kubernetes delete command
+![Kubernetes delete command](/assets/kubernetes_delete_command.png "Kubernetes delete command")
+
+- ## Imperative command to update an object property
+        $> kubectl set <property> <object_type>/<object_name> <container_name> = <new_property_value>
+        $> (Example)
+        $> kubectl set image deployment/my_deployment client_container = mynew/image:v2
+
+- ## To be able to execute docker cli commands on the minikube docker-server, execute the following command on the terminal Ps.: this will change temporaly only the current terminal tab to connect to the minikube docker env
+        $> eval $(minikube docker-env)
+
+- ## Kubernetes Object Types
+![Kubernetes Object Types](/assets/kubernetes_object_types_clusterip.png "Kubernetes Object Types")
+
+- ## Kubernetes architecture for project example
+![Kubernetes architecture for project example](/assets/kubernetes_architecture.png "Kubernetes architecture for project example")
