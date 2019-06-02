@@ -56,6 +56,9 @@
 - ## Kubernetes Object Types
 ![Kubernetes Object Types](/assets/kubernetes_object_types_clusterip.png "Kubernetes Object Types")
 
+- ## Kubernetes Services Types
+![Kubernetes Services Types](/assets/kubernetes_services_types.png "Kubernetes Services Types")
+
 - ## Kubernetes architecture for project example
 ![Kubernetes architecture for project example](/assets/kubernetes_architecture.png "Kubernetes architecture for project example")
 
@@ -73,3 +76,6 @@
 
 - ##  Storage documentation
     https://kubernetes.io/docs/concepts/storage/storage-classes
+
+- ## Kubernetes secret command to create a secret storage ideal to store passwords
+![Kubernetes secret command](/assets/kubernetes_secret_command.png "Kubernetes secret command")

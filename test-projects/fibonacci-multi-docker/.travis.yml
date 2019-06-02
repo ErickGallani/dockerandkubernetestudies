@@ -1,0 +1,35 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t erickgallani/fibonacci-multi-docker-test-client -f ./client/Dockerfile.ci ./client
+
+script:
+  - docker run erickgallani/fibonacci-multi-docker-test-client npm run test -- --coverage
+
+after_success:
+  - docker build -t erickgallani/fibonacci-multi-docker-test-client ./client
+  - docker build -t erickgallani/fibonacci-multi-docker-test-nginx ./nginx
+  - docker build -t erickgallani/fibonacci-multi-docker-test-server ./server
+  - docker build -t erickgallani/fibonacci-multi-docker-test-worker ./worker
+  # Login to docker CI
+  - echo "$DOCKER_HUB_PASS" | docker login -u "$DOCKER_HUB_LOGIN" --password-stdin
+  # Push images to docker hub
+  - docker push erickgallani/fibonacci-multi-docker-test-client
+  - docker push erickgallani/fibonacci-multi-docker-test-nginx
+  - docker push erickgallani/fibonacci-multi-docker-test-server
+  - docker push erickgallani/fibonacci-multi-docker-test-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-2"
+  app: "MultiContainerFibonacci"
+  env: "Multicontainerfibonacci-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-285159751624"
+  bucket_path: "MultiContainerFibonacci"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
